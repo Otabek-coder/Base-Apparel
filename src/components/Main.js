@@ -1,25 +1,26 @@
 import React, { useState } from "react";
 import { InputConatainer, MainContainer, MainWrapper } from "./MainStyle";
 import Header from "./module/Header";
+let emailRegex =
+  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 export default function Main() {
-  const [email, setEmail] = useState({ email: "" });
+  const [email, setEmail] = useState("");
+  const [state, setState] = useState("");
 
   let handleChange = (e) => {
-    const { value, name } = e.target;
-
-    let re =
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-    if (re.test(value)) {
-      setEmail({ [name]: value });
-      alert("provided valid email");
-    } else {
-      alert("provide valid email?");
-    }
+    setEmail(e.target.value);
+  
   };
   function handleSubmit(event) {
     event.preventDefault();
+    if (emailRegex.test(email)) {
+      setState("success");
+      // error
+    } else {
+      // alert("Invalid email");
+      setState("error");
+    }
   }
   return (
     <MainWrapper>
@@ -36,13 +37,14 @@ export default function Main() {
         <InputConatainer>
           <form onSubmit={handleSubmit}>
             <input
-              type="email"
               placeholder="Email Address"
               name="email"
-              value={email.email}
+              value={email}
               onChange={handleChange}
             />
-            <img src="/images/icon-error.svg" alt="" className="icon-error" />
+            {state === "error" && (
+              <img src="/images/icon-error.svg" alt="" className="icon-error" />
+            )}
             <button type="submit">
               <img
                 className="error-icon"
@@ -52,7 +54,12 @@ export default function Main() {
             </button>
           </form>
         </InputConatainer>
-        <p className="error-text">Please provide a valid email</p>
+        {state === "success" && (
+          <p className="success-text">Email sign up is successful</p>
+        )}
+        {state === "error" && (
+          <p className="error-text">Please provide a valid email</p>
+        )}
       </MainContainer>
     </MainWrapper>
   );

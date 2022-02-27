@@ -23,7 +23,7 @@ export const MainWrapper = styled.div`
     padding: 0em 4em 5em 3em;
   }
 `;
-export  const MainContainer = styled.div`
+export const MainContainer = styled.div`
   .title {
     font-size: 4.2rem;
     letter-spacing: 0.3em;
@@ -53,6 +53,10 @@ export  const MainContainer = styled.div`
   .error-text {
     margin: 1em 1.8em;
     color: hsl(0, 74%, 74%);
+  }
+  .success-text {
+    margin: 1em 1.8em;
+    color: green;
   }
 `;
 
