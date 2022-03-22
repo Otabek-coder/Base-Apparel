@@ -8,9 +8,6 @@ const Head = styled.div`
   @media(max-width:75em){
     margin: 6em  0em 4em 0em;
   }
-  @media(max-width:70em){
-    margin: 6em  0em 3em 0em;
-  }
   @media(max-width:65em){
     margin: 6em  0em 2em 0em;
   }

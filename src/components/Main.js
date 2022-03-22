@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { InputConatainer, MainContainer, MainWrapper } from "./MainStyle";
 import Header from "./module/Header";
   /* eslint-disable no-useless-escape */
@@ -9,7 +9,18 @@ let emailRegex =
 export default function Main() {
   const [email, setEmail] = useState("");
   const [state, setState] = useState("");
-
+  const [width, setWidth] = useState(
+    () => typeof window !== "undefined" && window.innerWidth
+  );
+  useEffect(() => {
+    function watchWidth() {
+      setWidth(window.innerWidth);
+    }
+    window.addEventListener("resize", watchWidth);
+    return function () {
+      window.removeEventListener("resize", watchWidth);
+    };
+  }, []);
   let handleChange = (e) => {
     setEmail(e.target.value);
   
@@ -26,7 +37,7 @@ export default function Main() {
   }
   return (
     <MainWrapper>
-      <Header />
+      { width > 960 && <Header />}
       <MainContainer>
         <h1 className="title">
           <span>WE'RE</span> COMING <br></br>SOON

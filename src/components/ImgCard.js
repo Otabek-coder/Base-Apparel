@@ -1,34 +1,32 @@
 import React from "react";
 import styled from "styled-components";
 
+
 const ImageWrapper = styled.div`
   width: 40%;
   background-image: url("/images/hero-desktop.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
-
-
-  @media (max-width: 65em) {
-    width: 100%;
-  }
  
-  @media (max-width: 44em) {
+  @media (max-width: 960px) {
     background-image: url("/images/hero-mobile.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    width: 100%;
     height: 50vh;
-    width: 100%;
- 
   }
-  @media (max-width: 34em) {
-    width: 100%;
+  @media (max-width: 525px) {
+    background-size: contain;
+    height: 350px;
   }
+  
 `;
 
 export default function Imgcard() {
   return (
+  
     <ImageWrapper>
       {/* <img src="/images/hero-desktop.jpg" alt="heroG" /> */}
     </ImageWrapper>
+  
   );
 }
