@@ -13,7 +13,7 @@ export const MainWrapper = styled.div`
     padding: 0em 8em 8em 8em;
   }
 
-  @media (max-width: 960px) {
+  @media (max-width: 60em) {
     padding: 0em 5em 8em 5em;
     width: 100%;
   }
@@ -31,7 +31,7 @@ export const MainContainer = styled.div`
     font-size: 4.2rem;
     letter-spacing: 0.3em;
     font-weight: 600;
-    @media (max-width: 960px) {
+    @media (max-width: 60em) {
       font-size: 4rem;
       text-align: center;
     }
@@ -53,7 +53,7 @@ export const MainContainer = styled.div`
     color: hsl(0, 36%, 70%);
     line-height: 1.6;
     margin: 2em 0em;
-    @media (max-width: 960px) {
+    @media (max-width: 60em) {
       text-align: center;
     }
   }
@@ -66,7 +66,7 @@ export const MainContainer = styled.div`
     margin: 1em 1.8em;
     color: green;
   }
-  @media (max-width: 960px) {
+  @media (max-width: 60em) {
     padding: 5em 0em 0em;
   }
 `;
@@ -107,24 +107,8 @@ export const InputConatainer = styled.div`
   }
   .icon-error {
     position: absolute;
-    top: 50%;
-    left: 75%;
-    transform: translate(-50%, -50%);
+        right: 110px;
+        top: calc(50% - 12px);
   }
-  @media (max-width: 65em) {
-    .icon-error {
-      left: 70%;
-    }
-  }
-  @media (max-width: 60em) {
-    .icon-error {
-      left: 80%;
-    }
-  }
-
-  @media (max-width: 28em) {
-    .icon-error {
-      left: 65%;
-    }
-  }
+  
 `;

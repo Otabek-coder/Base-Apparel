@@ -8,7 +8,7 @@ const ImageWrapper = styled.div`
   background-repeat: no-repeat;
   background-size: 100% 100%;
  
-  @media (max-width: 960px) {
+  @media (max-width: 60em) {
     background-image: url("/images/hero-mobile.jpg");
     background-repeat: no-repeat;
     width: 100%;
