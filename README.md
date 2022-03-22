@@ -6,6 +6,8 @@
 ![active-states](https://user-images.githubusercontent.com/65924250/154829399-98b4c7c9-66fc-439f-85e6-8df15dd06283.jpg)
 
 ### Mobile View
+![mobile-design](https://user-images.githubusercontent.com/65924250/159546075-c0232c98-e7f4-4abe-9830-eb47539d512a.jpg)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
